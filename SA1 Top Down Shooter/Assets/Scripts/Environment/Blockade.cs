@@ -23,7 +23,7 @@ public class Blockade : MonoBehaviour
 
     private void Update()
     {
-        if (health >= 0 && crateActive )
+        if (health >= 0 && crateActive)
         {
             health -= damageTick * Time.deltaTime;
         }
@@ -49,13 +49,13 @@ public class Blockade : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        UIManager.Instance.UpdateInteractText("E");
+        //UIManager.Instance.UpdateInteractText("E");
         playerInRange = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        UIManager.Instance.UpdateInteractText(" ");
+        //UIManager.Instance.UpdateInteractText(" ");
         playerInRange = false;
     }
 

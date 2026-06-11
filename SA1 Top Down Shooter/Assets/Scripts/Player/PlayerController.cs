@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     public void OnLook(InputAction.CallbackContext context)
     {
         mousePosition = context.ReadValue<Vector2>();
+        Debug.Log($"MousePos: {mousePosition}");
     }
 
     public void OnSprint(InputAction.CallbackContext context)
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //RotateTowardsMouse();
+        RotateTowardsMouse();
 
         if (isKnockedBack)
         {
@@ -81,7 +82,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        Debug.Log($"Input: {moveInput} Velocity: {rb.linearVelocity}");
+        //Debug.Log($"Input: {moveInput} Velocity: {rb.linearVelocity}");
         MoveRelativeToScreen();
     }
 

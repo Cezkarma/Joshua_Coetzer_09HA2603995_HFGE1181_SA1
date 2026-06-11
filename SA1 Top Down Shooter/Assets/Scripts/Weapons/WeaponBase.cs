@@ -12,7 +12,7 @@ public abstract class WeaponBase : MonoBehaviour
     [SerializeField] public Transform firePoint;
 
     [Header("Animator")]
-    private Animator playerAnimator;
+    //private Animator playerAnimator;
 
     protected int currentAmmo;
     protected float nextFireTime = 0f;
@@ -25,9 +25,9 @@ public abstract class WeaponBase : MonoBehaviour
         currentAmmo = maxAmmo;
         OnAmmoChanged?.Invoke(currentAmmo, maxAmmo);
 
-        playerAnimator = GetComponentInParent<Animator>();
+        //playerAnimator = GetComponentInParent<Animator>();
 
-        UIManager.Instance.UpdateReloadProgress(1f);
+        //UIManager.Instance.UpdateReloadProgress(1f);
     }
 
     public void TryShoot()
@@ -36,13 +36,13 @@ public abstract class WeaponBase : MonoBehaviour
             return;
 
         Shoot();
-        AudioManager.Instance.Play("ShootWeapon");
-        WeaponData weaponData = this.GetComponent<WeaponData>();
-        playerAnimator.SetTrigger(weaponData.shootTrigger);
+        //AudioManager.Instance.Play("ShootWeapon");
+        //WeaponData weaponData = this.GetComponent<WeaponData>();
+        //playerAnimator.SetTrigger(weaponData.shootTrigger);
         currentAmmo--;
         nextFireTime = Time.time + fireRate;
 
-        UIManager.Instance.UpdateReloadProgress((float)currentAmmo / maxAmmo);
+        //UIManager.Instance.UpdateReloadProgress((float)currentAmmo / maxAmmo);
 
         OnAmmoChanged?.Invoke(currentAmmo, maxAmmo);
 
@@ -66,14 +66,14 @@ public abstract class WeaponBase : MonoBehaviour
         while (timer < reloadTime)
         {
             timer += Time.deltaTime;
-            UIManager.Instance.UpdateReloadProgress(timer / reloadTime);
+            //UIManager.Instance.UpdateReloadProgress(timer / reloadTime);
             yield return null;
         }
 
         currentAmmo = maxAmmo;
         isReloading = false;
 
-        UIManager.Instance.UpdateReloadProgress(1f);
+        //UIManager.Instance.UpdateReloadProgress(1f);
         OnAmmoChanged?.Invoke(currentAmmo, maxAmmo);
     }
 

@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour
 
     private Transform enemy;
     private Rigidbody2D rb;
-    private Animator animator;
+    //private Animator animator;
     private GameObject playerObj;
 
     private bool isKnockedBack = false;
@@ -41,7 +41,7 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
 
         playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
@@ -63,7 +63,7 @@ public class EnemyAI : MonoBehaviour
                 isStunned = true;
                 stunTimer = stunDurationAfterKnockback;
             }
-            animator.SetBool("isWalking", false);
+            //animator.SetBool("isWalking", false);
             return;
         }
 
@@ -76,7 +76,7 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-                animator.SetBool("isWalking", false);
+                //animator.SetBool("isWalking", false);
                 return;
             }
         }
@@ -118,7 +118,7 @@ public class EnemyAI : MonoBehaviour
         PlayerHealth pH = playerObj.GetComponent<PlayerHealth>();
         if (pH != null && pH.isPlayerDead)
         {
-            animator.SetBool("isWalking", false);
+            //animator.SetBool("isWalking", false);
             return;
         }
 
@@ -135,12 +135,12 @@ public class EnemyAI : MonoBehaviour
                 moveSpeed * Time.deltaTime
             );
 
-            animator.SetBool("isWalking", true);
+            //animator.SetBool("isWalking", true);
         }
         else if (CalculateDistance() <= attackRange && CalculateDistance() > minimumPlayerDistance)
         {
             isAttacking = true;
-            animator.SetBool("isWalking", false);
+            //animator.SetBool("isWalking", false);
         }
         else if (CalculateDistance() <= minimumPlayerDistance)
         {
@@ -151,11 +151,11 @@ public class EnemyAI : MonoBehaviour
                moveSpeed * Time.deltaTime
            );
 
-            animator.SetBool("isWalking", true);
+            //animator.SetBool("isWalking", true);
         }
         else
         {
-            animator.SetBool("isWalking", false);
+            //animator.SetBool("isWalking", false);
         }
     }
 
@@ -175,7 +175,7 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
-        animator.SetTrigger(attackTriggerName);
+        //animator.SetTrigger(attackTriggerName);
         GameObject bullet = Instantiate(projectile, firePoint.position, firePoint.rotation);
         fireRateTimer = fireRate;
 
@@ -186,6 +186,6 @@ public class EnemyAI : MonoBehaviour
         isKnockedBack = true;
         knockbackTimer = knockbackDuration;
         rb.linearVelocity = direction.normalized * force;
-        animator.SetBool("isWalking", false);
+        //animator.SetBool("isWalking", false);
     }
 }

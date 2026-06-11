@@ -10,7 +10,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float destroyDelay = 2.0f;
 
     [Header("Animation")]
-    [SerializeField] private Animator animator;
+    //[SerializeField] private Animator animator;
     [SerializeField] private string deathTriggerName = "Die";
 
     [HideInInspector] public UnityEvent onDeath;
@@ -27,10 +27,10 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
         onHealthChanged?.Invoke(currentHealth, maxHealth);
 
-        if (animator == null)
-        {
-            animator = GetComponent<Animator>();
-        }
+        //if (animator == null)
+        //{
+        //    animator = GetComponent<Animator>();
+        //}
     }
 
     public void TakeDamage(int amount)
@@ -63,10 +63,10 @@ public class EnemyHealth : MonoBehaviour
 
         onDeath?.Invoke();
 
-        if (animator != null && !string.IsNullOrEmpty(deathTriggerName))
-        {
-            animator.SetTrigger(deathTriggerName);
-        }
+        //if (animator != null && !string.IsNullOrEmpty(deathTriggerName))
+        //{
+        //    animator.SetTrigger(deathTriggerName);
+        //}
 
         if (destroyOnDeath)
         {

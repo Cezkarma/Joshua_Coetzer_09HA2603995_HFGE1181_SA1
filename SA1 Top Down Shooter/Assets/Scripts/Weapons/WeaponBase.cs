@@ -36,7 +36,7 @@ public abstract class WeaponBase : MonoBehaviour
             return;
 
         Shoot();
-        //AudioManager.Instance.Play("ShootWeapon");
+        AudioManager.Instance.Play("ShootWeapon");
         WeaponData weaponData = this.GetComponent<WeaponData>();
         //playerAnimator.SetTrigger(weaponData.shootTrigger);
         currentAmmo--;

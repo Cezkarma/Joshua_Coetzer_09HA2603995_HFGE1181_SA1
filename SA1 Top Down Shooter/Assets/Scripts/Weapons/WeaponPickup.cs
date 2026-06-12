@@ -12,7 +12,7 @@ public class WeaponPickup : MonoBehaviour
         if (playerWeapon != null)
         {
             playerWeapon.SwapWeapon(weaponGameObjectPrefab, pickupPrefab);
-            AudioManager.Instance.Play("WeaponPickup");
+            //AudioManager.Instance.Play("WeaponPickup");
             Destroy(gameObject);
         }
     }

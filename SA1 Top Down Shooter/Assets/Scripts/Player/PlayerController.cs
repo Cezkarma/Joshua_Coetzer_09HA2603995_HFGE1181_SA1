@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         mainCamera = Camera.main;
         playerHealth = GetComponent<PlayerHealth>();
-        //playerWeaponManager = GetComponent<PlayerWeaponManager>();
+        playerWeaponManager = GetComponent<PlayerWeaponManager>();
         //playerAnimator = GetComponentInParent<Animator>();
     }
 

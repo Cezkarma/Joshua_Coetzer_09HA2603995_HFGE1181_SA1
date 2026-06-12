@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8006835568567411278}
   - component: {fileID: 2589991311917422329}
   - component: {fileID: 3911023873672660457}
+  - component: {fileID: 4524456223810887732}
   - component: {fileID: 8247968594615628629}
   - component: {fileID: 4294901786065338236}
   m_Layer: 8
@@ -186,6 +187,28 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!95 &4524456223810887732
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024485480228769962}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6be7025e54337149b207c8340963989, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8247968594615628629
 MonoBehaviour:
   m_ObjectHideFlags: 0

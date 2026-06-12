@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.5
-  maxAmmo: 6
+  maxAmmo: 4
   reloadTime: 1.5
   bulletPrefab: {fileID: 6392095405949687579, guid: 05c496d74cf05074dab64df45ea7823f, type: 3}
   firePoint: {fileID: 7406743686583180733}

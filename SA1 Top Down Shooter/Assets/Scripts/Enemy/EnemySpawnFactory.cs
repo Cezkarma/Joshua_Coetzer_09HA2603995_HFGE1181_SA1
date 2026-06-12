@@ -31,7 +31,7 @@ public class EnemySpawnFactory : MonoBehaviour
 
     private int patrolIndex = 0;
     private int currentWaveIndex = -1;
-    private float timeBetweenWaves = 50;
+    private float timeBetweenWaves = 20;
     private float waveTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,7 +47,7 @@ public class EnemySpawnFactory : MonoBehaviour
         {
             //Debug.Log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
             waveTimer -= Time.deltaTime;
-            //UIManager.Instance.UpdateNextWaveTimer(waveTimer);
+            UIManager.Instance.UpdateNextWaveTimer(waveTimer);
         }
 
         FactoryMovement();

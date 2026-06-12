@@ -27,7 +27,7 @@ public abstract class WeaponBase : MonoBehaviour
 
         //playerAnimator = GetComponentInParent<Animator>();
 
-        //UIManager.Instance.UpdateReloadProgress(1f);
+        UIManager.Instance.UpdateReloadProgress(1f);
     }
 
     public void TryShoot()
@@ -37,12 +37,12 @@ public abstract class WeaponBase : MonoBehaviour
 
         Shoot();
         //AudioManager.Instance.Play("ShootWeapon");
-        //WeaponData weaponData = this.GetComponent<WeaponData>();
+        WeaponData weaponData = this.GetComponent<WeaponData>();
         //playerAnimator.SetTrigger(weaponData.shootTrigger);
         currentAmmo--;
         nextFireTime = Time.time + fireRate;
 
-        //UIManager.Instance.UpdateReloadProgress((float)currentAmmo / maxAmmo);
+        UIManager.Instance.UpdateReloadProgress((float)currentAmmo / maxAmmo);
 
         OnAmmoChanged?.Invoke(currentAmmo, maxAmmo);
 
@@ -66,14 +66,14 @@ public abstract class WeaponBase : MonoBehaviour
         while (timer < reloadTime)
         {
             timer += Time.deltaTime;
-            //UIManager.Instance.UpdateReloadProgress(timer / reloadTime);
+            UIManager.Instance.UpdateReloadProgress(timer / reloadTime);
             yield return null;
         }
 
         currentAmmo = maxAmmo;
         isReloading = false;
 
-        //UIManager.Instance.UpdateReloadProgress(1f);
+        UIManager.Instance.UpdateReloadProgress(1f);
         OnAmmoChanged?.Invoke(currentAmmo, maxAmmo);
     }
 

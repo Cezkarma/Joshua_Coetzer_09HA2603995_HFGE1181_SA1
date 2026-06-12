@@ -13,7 +13,6 @@ public class Blockade : MonoBehaviour
     private bool playerInRange;
     private bool crateActive;
 
-
     private void Start()
     {
         health = maxHealth;
@@ -46,16 +45,15 @@ public class Blockade : MonoBehaviour
         crateActive = true;
     }
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //UIManager.Instance.UpdateInteractText("E");
+        UIManager.Instance.UpdateInteractText("Press E to interact!");
         playerInRange = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        //UIManager.Instance.UpdateInteractText(" ");
+        UIManager.Instance.UpdateInteractText(" ");
         playerInRange = false;
     }
 

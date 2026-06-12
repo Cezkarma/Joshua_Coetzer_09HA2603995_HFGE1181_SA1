@@ -4,10 +4,10 @@ using UnityEngine.Events;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health Settings")]
-    [SerializeField] private int maxHealth = 50;
+    [SerializeField] private int maxHealth = 1;
     [SerializeField] private bool canDie = true;
     [SerializeField] private bool destroyOnDeath = true;
-    [SerializeField] private float destroyDelay = 2.0f;
+    [SerializeField] private float destroyDelay = 0.7f;
 
     [Header("Animation")]
     //[SerializeField] private Animator animator;
@@ -42,7 +42,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         onHealthChanged?.Invoke(currentHealth, maxHealth);
 
-        AudioManager.Instance.Play("EnemyTakeDamage");
+        //AudioManager.Instance.Play("EnemyTakeDamage");
 
         if (currentHealth <= 0 && canDie)
         {
@@ -59,7 +59,7 @@ public class EnemyHealth : MonoBehaviour
 
         isDead = true;
 
-        AudioManager.Instance.Play("EnemyDeath");
+        //AudioManager.Instance.Play("EnemyDeath");
 
         onDeath?.Invoke();
 

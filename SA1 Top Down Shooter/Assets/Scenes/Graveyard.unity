@@ -4712,11 +4712,11 @@ GameObject:
   - component: {fileID: 796587615}
   m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &796587610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4885,10 +4885,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e000808d767cfc444b341850e20f888b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 1
   canDie: 1
   destroyOnDeath: 1
-  destroyDelay: 2
+  destroyDelay: 1
   deathTriggerName: Die
   onDeath:
     m_PersistentCalls:

@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         mainCamera = Camera.main;
         playerHealth = GetComponent<PlayerHealth>();
         playerWeaponManager = GetComponent<PlayerWeaponManager>();
-        //playerAnimator = GetComponentInParent<Animator>();
+        playerAnimator = GetComponentInParent<Animator>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -51,14 +51,14 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             isSprinting = true;
-            //playerAnimator.SetBool("IsSprinting", true);
+            playerAnimator.SetBool("IsSprinting", true);
             WeaponData weaponData = playerWeaponManager.currentWeaponGameObject.GetComponent<WeaponData>();
-            //playerAnimator.SetTrigger(weaponData.sprintTrigger);
+            playerAnimator.SetTrigger(weaponData.sprintTrigger);
         }
         else if (context.canceled)
         {
             isSprinting = false;
-            //playerAnimator.SetBool("IsSprinting", false);
+            playerAnimator.SetBool("IsSprinting", false);
         }
     }
 
@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //Debug.Log($"Input: {moveInput} Velocity: {rb.linearVelocity}");
         MoveRelativeToScreen();
     }
 

@@ -21,12 +21,12 @@ public class PlayerWeaponManager : MonoBehaviour
 
     private WeaponBase currentWeaponScript;
     private PlayerHealth playerHealth;
-    //private Animator playerAnimator;
+    private Animator playerAnimator;
 
     private void Start()
     {
         playerHealth = GetComponent<PlayerHealth>();
-        //playerAnimator = GetComponent<Animator>();
+        playerAnimator = GetComponent<Animator>();
 
         if (currentWeaponGameObject != null)
         {
@@ -107,7 +107,7 @@ public class PlayerWeaponManager : MonoBehaviour
         {
             currentPickup = weaponData.pickupPrefab;
 
-            //playerAnimator.SetTrigger(weaponData.idleTrigger);
+            playerAnimator.SetTrigger(weaponData.idleTrigger);
 
            
         }

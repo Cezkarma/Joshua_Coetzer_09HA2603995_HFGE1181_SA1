@@ -12,7 +12,7 @@ public abstract class WeaponBase : MonoBehaviour
     [SerializeField] public Transform firePoint;
 
     [Header("Animator")]
-    //private Animator playerAnimator;
+    private Animator playerAnimator;
 
     protected int currentAmmo;
     protected float nextFireTime = 0f;
@@ -25,7 +25,7 @@ public abstract class WeaponBase : MonoBehaviour
         currentAmmo = maxAmmo;
         OnAmmoChanged?.Invoke(currentAmmo, maxAmmo);
 
-        //playerAnimator = GetComponentInParent<Animator>();
+        playerAnimator = GetComponentInParent<Animator>();
 
         UIManager.Instance.UpdateReloadProgress(1f);
     }
@@ -38,7 +38,7 @@ public abstract class WeaponBase : MonoBehaviour
         Shoot();
         AudioManager.Instance.Play("ShootWeapon");
         WeaponData weaponData = this.GetComponent<WeaponData>();
-        //playerAnimator.SetTrigger(weaponData.shootTrigger);
+        playerAnimator.SetTrigger(weaponData.shootTrigger);
         currentAmmo--;
         nextFireTime = Time.time + fireRate;
 

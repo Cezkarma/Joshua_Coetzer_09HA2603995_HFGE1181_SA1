@@ -9170,9 +9170,9 @@ RectTransform:
   - {fileID: 812867952}
   m_Father: {fileID: 780489042}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -425}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1573365498 stripped
@@ -9318,6 +9318,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dc630db62eeec43b3aed29833b2828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1735493954 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1592209084822769064, guid: c095d1301d0f4db488b9ebd7eb383dfd, type: 3}
+  m_PrefabInstance: {fileID: 7480680395822581662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1786109473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45684,6 +45689,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8293887404112302730, guid: c095d1301d0f4db488b9ebd7eb383dfd, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1735493954}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
